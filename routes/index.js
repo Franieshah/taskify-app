@@ -309,8 +309,8 @@ router.post('/add-users-api', function (req, res, next) {
 //   const data = await taskModel_admin.find({});
 //   console.log(data);
 // });
-router.get('/get-all-users-api', passport.authenticate('jwt', { session: false }), function (req, res, next) {
-  //router.get('/get-all-users-api', AuthJWT, function (req, res, next) {
+//router.get('/get-all-users-api', passport.authenticate('jwt', { session: false }), function (req, res, next) {
+router.get('/get-all-users-api', AuthJWT, function (req, res, next) {
   taskModel_admin.find({}).then(function (err, data) {
     if (data.length > 0) {
       console.log("Data is : " + data);
